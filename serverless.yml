@@ -1,0 +1,143 @@
+service: aws-erikpinares
+frameworkVersion: "3"
+
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    TABLE_PLANETAS:
+      Ref: PlanetasTable
+    TABLE_PERSONAS:
+      Ref: PersonasTable
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource:
+        - "Fn::GetAtt": [PlanetasTable, Arn]
+        - "Fn::GetAtt": [PersonasTable, Arn]
+  apiGateway:
+    shouldStartNameWithService: true
+
+
+plugins:
+  - serverless-offline
+
+
+
+
+functions:
+
+  getDataPersonas:
+    handler: src/controllers/importarPersonas.getDataPersonas
+    events:
+      - httpApi:
+          method: GET
+          path: /importarPersonas
+
+  crearPersona:
+    handler: src/agregarPersona.crearPersona
+    events:
+      - httpApi:
+          method: POST
+          path: /agregarPersona
+
+  obtenerPersonas:
+    handler: src/listarPersonas.obtenerPersonas
+    events:
+      - httpApi:
+          method: GET
+          path: /listarPersonas
+
+  obtenerPersona:
+    handler: src/listaPersona.obtenerPersona
+    events:
+      - httpApi:
+          method: GET
+          path: /listaPersona/{id}
+
+  actualizarPersona:
+    handler: src/editarPersona.actualizarPersona
+    events:
+      - httpApi:
+          method: PUT
+          path: /editarPersona/{id}
+
+  quitarPersona:
+    handler: src/eliminarPersona.quitarPersona
+    events:
+      - httpApi:
+          method: DELETE
+          path: /eliminarPersona/{id}
+
+  getDataPlanetas:
+    handler: src/controllers/importarPlanetas.getDataPlanetas
+    events:
+      - httpApi:
+          method: GET
+          path: /importarPlanetas
+
+  crearPlaneta:
+    handler: src/agregarPlaneta.crearPlaneta
+    events:
+      - httpApi:
+          method: POST
+          path: /agregarPlaneta
+
+  obtenerPlanetas:
+    handler: src/listarPlanetas.obtenerPlanetas
+    events:
+      - httpApi:
+          method: GET
+          path: /listarPlanetas
+
+  obtenerPlaneta:
+    handler: src/listaPlaneta.obtenerPlaneta
+    events:
+      - httpApi:
+          method: GET
+          path: /listaPlaneta/{id}
+
+  actualizarPlaneta:
+    handler: src/editarPlaneta.actualizarPlaneta
+    events:
+      - httpApi:
+          method: PUT
+          path: /editarPlaneta/{id}
+
+  quitarPlaneta:
+    handler: src/eliminarPlaneta.quitarPlaneta
+    events:
+      - httpApi:
+          method: DELETE
+          path: /eliminarPlaneta/{id}
+
+
+
+
+resources:
+  Resources:
+    PlanetasTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: PlanetasTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+    PersonasTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: PersonasTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

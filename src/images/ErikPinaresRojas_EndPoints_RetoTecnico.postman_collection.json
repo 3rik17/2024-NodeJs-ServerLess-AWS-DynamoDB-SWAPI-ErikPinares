@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "1ad8a88f-bc11-482b-8343-87566f058f09",
+		"name": "ErikPinaresRojas_EndPoints_RetoTecnico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24609035"
+	},
+	"item": [
+		{
+			"name": "Planetas_crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Tatooine 222\",\r\n\t\"periodo_rotacion\": \"222\",\r\n\t\"periodo_orbital\": \"22222\",\r\n\t\"diametro\": \"22222\",\r\n\t\"clima\": \"arid\",\r\n\t\"gravedad\": \"1 standard\",\r\n\t\"terreno\": \"desert\",\r\n\t\"superficie_agua\": \"1\",\r\n\t\"poblacion\": \"200000\",\r\n\t\"residentes\": [\r\n\t\"https://swapi.dev/api/people/1/\",\r\n\t\"https://swapi.dev/api/people/2/\",\r\n\t\"https://swapi.dev/api/people/4/\",\r\n\t\"https://swapi.dev/api/people/6/\",\r\n\t\"https://swapi.dev/api/people/7/\",\r\n\t\"https://swapi.dev/api/people/8/\",\r\n\t\"https://swapi.dev/api/people/9/\",\r\n\t\"https://swapi.dev/api/people/11/\",\r\n\t\"https://swapi.dev/api/people/43/\",\r\n\t\"https://swapi.dev/api/people/62/\"\r\n\t],\r\n\t\"peliculas\": [\r\n\t\"https://swapi.dev/api/films/1/\",\r\n\t\"https://swapi.dev/api/films/3/\",\r\n\t\"https://swapi.dev/api/films/4/\",\r\n\t\"https://swapi.dev/api/films/5/\",\r\n\t\"https://swapi.dev/api/films/6/\"\r\n\t],\r\n\t\"creado\": \"2014-12-09T13:50:49.641000Z\",\r\n\t\"editado\": \"2014-12-20T20:58:18.411000Z\",\r\n\t\"url\": \"https://swapi.dev/api/planets/1/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/agregarPlaneta",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"agregarPlaneta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personas_crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Luke 222\",\r\n\t\"talla\": \"222\",\r\n\t\"peso\": \"22\",\r\n\t\"cabello_color\": \"blond2\",\r\n\t\"piel_color\": \"fair2\",\r\n\t\"ojos_color\": \"blue2\",\r\n\t\"año_nacimiento\": \"19BBY\",\r\n\t\"genero\": \"male\",\r\n\t\"planeta_natal\": \"https://swapi.dev/api/planets/1/\",\r\n\t\"peliculas\": [\r\n\t\"https://swapi.dev/api/films/1/\",\r\n\t\"https://swapi.dev/api/films/2/\",\r\n\t\"https://swapi.dev/api/films/3/\",\r\n\t\"https://swapi.dev/api/films/6/\"\r\n\t],\r\n\t\"especies\": [],\r\n\t\"vehiculos\": [\r\n\t\"https://swapi.dev/api/vehicles/14/\",\r\n\t\"https://swapi.dev/api/vehicles/30/\"\r\n\t],\r\n\t\"naves_estelares\": [\r\n\t\"https://swapi.dev/api/starships/12/\",\r\n\t\"https://swapi.dev/api/starships/22/\"\r\n\t],\r\n\t\"creado\": \"2014-12-09T13:50:51.644000Z\",\r\n\t\"editado\": \"2014-12-20T21:17:56.891000Z\",\r\n\t\"url\": \"https://swapi.dev/api/people/1/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/agregarPersona",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"agregarPersona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planetas_importar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/importarPlanetas",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"importarPlanetas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personas_importar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/importarPersonas",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"importarPersonas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planetas_listartodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/listarPlanetas",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"listarPlanetas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personas_listartodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/listarPersonas",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"listarPersonas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planetas_listarxid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/listaPlaneta/6c56b4d0-1dde-4239-9110-8d2822632e1e",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"listaPlaneta",
+						"6c56b4d0-1dde-4239-9110-8d2822632e1e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personas_listarxid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/listaPersona/8259998f-5e5c-4e0e-b6a6-b9f09cd214e2",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"listaPersona",
+						"8259998f-5e5c-4e0e-b6a6-b9f09cd214e2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planetas_eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/eliminarPlaneta/4eb77568-338e-4580-8d53-f6c12cafc04c",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"eliminarPlaneta",
+						"4eb77568-338e-4580-8d53-f6c12cafc04c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personas_eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/eliminarPersona/63bfa3be-503a-44c3-baeb-43d7db4fad7f",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"eliminarPersona",
+						"63bfa3be-503a-44c3-baeb-43d7db4fad7f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planetas_actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Tatooine 33333\",\r\n\t\"periodo_rotacion\": \"33333\",\r\n\t\"periodo_orbital\": \"33333\",\r\n\t\"diametro\": \"33333\",\r\n\t\"clima\": \"arid\",\r\n\t\"gravedad\": \"1 standard\",\r\n\t\"terreno\": \"desert\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/editarPlaneta/ba2315b6-3e71-4e83-9506-fefb64aa2b48",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"editarPlaneta",
+						"ba2315b6-3e71-4e83-9506-fefb64aa2b48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personas_actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nombre\": \"Luke 3333\",\r\n\t\"talla\": \"3333\",\r\n\t\"peso\": \"333\",\r\n\t\"cabello_color\": \"blond333\",\r\n\t\"piel_color\": \"fair3\",\r\n\t\"ojos_color\": \"blue3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://j8aup83wn7.execute-api.us-east-1.amazonaws.com/editarPersona/63bfa3be-503a-44c3-baeb-43d7db4fad7f",
+					"protocol": "https",
+					"host": [
+						"j8aup83wn7",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"editarPersona",
+						"63bfa3be-503a-44c3-baeb-43d7db4fad7f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
